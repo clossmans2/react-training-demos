@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export class HeaderComponent extends React.Component {
+export class Header extends React.Component {
     private userName: string = "John Doe";
 
     componentDidMount(): void {

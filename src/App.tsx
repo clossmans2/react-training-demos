@@ -1,19 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { HeaderComponent } from './Header.component';
-import { Footer } from './Footer.component';
-import { HomeComponent } from './Home.component';
+import { Home } from './pages/Home';
 import { ThemeContext } from './ThemeContext';
+import { Students } from './pages/Students';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { StudentDetails } from './pages/StudentDetails';
 
 function App() {
   return (
     <ThemeContext.Provider value="dark">
-      <div className="App">
-        <HeaderComponent />
-        <HomeComponent />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/students/:studentId" element={<StudentDetails />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeContext.Provider>
   );
 }
